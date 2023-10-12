@@ -1,0 +1,61 @@
+<app-encabezado></app-encabezado>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class=" col-sm-7 text-center" style="background-color:#0911CE">
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+                <div class="col col-sm-8 pe-5 ps-5">
+                    <div class="shadow rounded bg-white p-5">
+                        <h1 class="mb-5">Registro usuario</h1>
+
+                       <form
+                       [formGroup]="formulario"
+                       (submit)="crearUsuario($event)" >
+                        <div class="col col-sm-6 offset-sm-3">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input formControlName="nombre"  type="text" class="form-control text-center" >
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 offset-sm-3">
+                            <div class="mb-3">
+                                <label for="documento" class="form-label">N° de documento</label>
+                                <input formControlName="numero_documento" type="text" class="form-control text-center" >
+                            </div>
+                        </div>
+                        <div class="col col-sm-6 offset-sm-3 mb-3">
+                            <label for="rol" class="form-label">Seleccionar rol</label>
+                            <select formControlName="rol" class="form-select" aria-label="Default select example">
+                                <option selected value="">Selecciona el rol</option>
+                                <option *ngFor="let rol of llenarSelectRol" value="{{rol.id_rol}}">{{rol.nombre_rol}}</option>
+                              </select>
+                        </div>
+
+                        <div class="col col-sm-6 offset-sm-3 mb-4">
+                            <div class="mb-3">
+                                <label for="contraseña" class="form-label">Contraseña</label>
+                                <input formControlName="clave"  type="password" class="form-control text-center" id="clave">
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+                       </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-5  text-center">
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+              <div class="row ">
+                <div class="col-sm-12"><span style="font-size: 100px;" class="border-bottom fuenteGeneral">GES</span></div>
+                <div class="col-sm-12"><span class=" fuenteGeneral">Gestión de servicios</span></div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>

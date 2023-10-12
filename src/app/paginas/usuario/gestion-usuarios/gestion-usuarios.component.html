@@ -1,0 +1,41 @@
+<app-encabezado></app-encabezado>
+<div class="container">
+
+  <div class="row  mt-3 mb-5">
+    <div class="col col-sm-12">
+      <a routerLink="/crear-usuario" class="btn btn-outline-primary" style="color: #0911CE;">Crear usuario</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-sm-12">
+      <table class="table table-hover table-bordered">
+        <caption>Lista de usuarios</caption>
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" class="text-center">Documento</th>
+            <th scope="col" class="text-center">Nombre</th>
+            <th scope="col" class="text-center">Rol</th>
+            <th scope="col" class="text-center"></th>
+            <th scope="col" class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of listaUsuario">
+            <th scope="row" class="text-center">{{usuario.num_documento}}</th>
+            <td class="text-center">{{usuario.nombre_usuario}}</td>
+            <td class="text-center">{{usuario.nombre_rol}}</td>
+            <td class="text-center"><a (click)="editarUsuario(usuario)" class="btn btn-outline-success">Editar</a></td>
+            <td *ngIf="usuario.estado === '1'" class="text-center">
+              <a class="btn btn-outline-danger" >Desactivar</a>
+            </td>
+            <td *ngIf="usuario.estado === '0'" class="text-center">
+              <a class="btn btn-outline-success">Activar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,55 @@
+<app-encabezado></app-encabezado>
+<div class="container">
+
+  <div class=" me-2 mt-3">
+    <div class="col-sm-12 text-end">
+      <div class="btn-group">
+        <a routerLink="/crear-orden" class="btn btn-primary" style="background-color: #0911CE">Crear orden</a>
+        <a routerLink="/gestionar-clientes" class="btn btn-outline-primary">Clientes</a>
+        <a routerLink="/gestion-usuarios" class="btn btn-outline-primary">Usuarios</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col col-sm-12 mt-5">
+      <span class="fs-3">Ordenes pendientes</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-12">
+      <table class="table table-hover table-bordered">
+        <caption>Ordenes de servicios</caption>
+        <thead class="table-dark">
+        <tr>
+          <th scope="col">Documento/NIT</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Técnico</th>
+          <th scope="col">Descripción de la novedad</th>
+          <th scope="col">Fecha de orden</th>
+          <th scope="col">Estado</th>
+          <th scope="col" class="text-center"></th>
+          <th scope="col" class="text-center"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ordenPendiente of listadoOrdenesPendientes">
+          <td>{{ordenPendiente.nit}}</td>
+          <td>{{ordenPendiente.razon_social}}</td>
+          <td>{{ordenPendiente.nombre_usuario}}</td>
+          <td>{{ordenPendiente.descripcion_novedad}}</td>
+          <td>{{ordenPendiente.fecha_creacion}}</td>
+          <td>{{ordenPendiente.nombre_estado}}</td>
+          <td class="text-center"><a class="btn btn-outline-success">Editar</a></td>
+          <td class="text-center"><a class="btn btn-outline-danger">Cancelar</a></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+

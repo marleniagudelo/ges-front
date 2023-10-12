@@ -1,0 +1,79 @@
+<app-encabezado></app-encabezado>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-7 text-center" style="background-color:#0911CE">
+      <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col col-sm-10 p-5">
+          <div class="shadow rounded bg-white p-5">
+            <h1 class="mb-5">Editar cliente</h1>
+
+            <form [formGroup]="formulario" (submit)="editarCliente($event)">
+              <div class="row">
+                <div class="col col-sm-6">
+                  <div class="mb-3">
+                    <label for="razon" class="form-label">Razón social</label>
+                    <input formControlName="razon_social" type="text" class="form-control text-center" id="razon">
+                  </div>
+                </div>
+
+                <div class="col col-sm-6">
+                  <div class="mb-3">
+                    <label for="nit" class="form-label">Nit</label>
+                    <input formControlName="nit" type="text" class="form-control text-center" id="nit">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-sm-6 mb-3">
+                  <label for="representante" class="form-label">Representante legal</label>
+                  <input formControlName="representante" type="text" class="form-control text-center" id="representante">
+                </div>
+
+                <div class="col col-sm-6 mb-4">
+                  <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input formControlName="direccion" type="text" class="form-control text-center" id="direccion">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col col-sm-6 mb-4">
+                  <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input formControlName="telefono" type="text" class="form-control text-center" id="telefono">
+                  </div>
+
+                </div>
+                <div class="col col-sm-6 mb-4">
+                  <div class="mb-3">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input formControlName="correo" type="mail" class="form-control text-center" id="correo">
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Editar cliente</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-5 border text-center" >
+      <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="row ">
+          <div class="col-sm-12"><span style="font-size: 100px;" class="border-bottom fuenteGeneral">GES</span></div>
+          <div class="col-sm-12"><span class=" fuenteGeneral">Gestión de servicios</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

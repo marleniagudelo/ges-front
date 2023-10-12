@@ -1,0 +1,18 @@
+<div class="container-fluid text-white" style="background-color: #070f9a">
+    <div class="row">
+        <div class="col  col-sm-4 pt-2" style="font-size: 30px;">
+            <a class="text-white" style="text-decoration:none;" routerLink="/principal">GES</a>
+        </div>
+        <div class="col col-sm-4 text-center pt-2" style="font-size: 25px;">
+            {{nombrePagina}}</div>
+        <div class="col col-sm-2 offset-sm-2 text-end">
+            <div class="row ">
+                <div class="col text-end" (click)="cerrarCesion()"> <span class="btn text-white">Cerrar sesión</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><span class="me-3">{{nombreUsuario}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<app-encabezado></app-encabezado>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-7 text-center" style="background-color:#0911CE">
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+                <div class="col col-sm-10 pe-5 ps-5">
+                    <div class="shadow rounded bg-white p-5">
+                        <h1 class="mb-5">Crear orden</h1>
+
+                        <form [formGroup]="formulario" (submit)="crearOrden($event)">
+                            <div class="row">
+                                <div class="col col-sm-6 offset-sm-3 mb-3">
+                                    <label for="usuario" class="form-label">Cliente</label>
+                                    <select formControlName="cliente" class="form-select text-center" aria-label="Default select example">
+                                        <option value="">Seleccione un cliente</option>
+                                        <option *ngFor="let cliente of listadoCliente" value="{{cliente.nit}}">{{cliente.razon_social}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-6 offset-sm-3 mb-3">
+                                    <label for="usuario" class="form-label">Detalle novedad</label>
+                                    <div class="form-floating">
+                                        <textarea formControlName="descripcion_novedad" class="form-control p-1" id="floatingTextarea"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-sm-6 offset-sm-3 mb-3">
+                                    <label for="usuario" class="form-label">Técnico</label>
+                                    <select formControlName="tecnico" class="form-select text-center" aria-label="Default select example">
+                                        <option value="">Seleccione el técnico</option>
+                                      <option *ngFor="let tecnico of listadoTecnico" value="{{tecnico.num_documento}}">{{tecnico.nombre_usuario}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Crear orden</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-5 text-center" >
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+              <div class="row ">
+                <div class="col-sm-12"><span style="font-size: 100px;" class="border-bottom fuenteGeneral">GES</span></div>
+                <div class="col-sm-12"><span class=" fuenteGeneral">Gestión de servicios</span></div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>

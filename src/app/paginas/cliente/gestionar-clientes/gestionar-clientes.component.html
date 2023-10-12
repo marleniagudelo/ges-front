@@ -1,0 +1,43 @@
+<app-encabezado></app-encabezado>
+
+<div class="container">
+  <div class="row  mt-3 mb-5">
+    <div class="col col-sm-12 text-end">
+      <a routerLink="/crear-cliente" class="btn btn-outline-primary" style="color: #0911CE;">Crear cliente</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-sm-12">
+      <table class="table table-hover table-bordered">
+        <caption>Listado clientes</caption>
+        <thead class="table-dark">
+        <tr>
+          <th scope="col" class="text-center">Nit</th>
+          <th scope="col" class="text-center">Representante legal</th>
+          <th scope="col" class="text-center">Razón social</th>
+          <th scope="col" class="text-center">Dirección</th>
+          <th scope="col" class="text-center">Teléono</th>
+          <th scope="col" class="text-center">Correo</th>
+          <th scope="col" class="text-center"></th>
+          <th scope="col" class="text-center"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cliente of listadoClientes">
+          <th scope="row" class="text-center">{{cliente.nit}}</th>
+          <td class="text-center">{{cliente.representante_legal}}</td>
+          <td class="text-center">{{cliente.razon_social}}</td>
+          <td class="text-center">{{cliente.direccion}}</td>
+          <td class="text-center">{{cliente.telefono}}</td>
+          <td class="text-center">{{cliente.correo}}</td>
+          <td class="text-center"><a (click)="editarCliente(cliente)" class="btn btn-outline-success">Editar</a></td>
+          <td class="text-center"><a (click)="eliminarCliente(cliente.nit)" class="btn btn-outline-danger">Eliminar</a></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

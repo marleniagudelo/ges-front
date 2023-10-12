@@ -1,0 +1,48 @@
+<div class="container-fluid fuenteGeneral">
+  <div class="row">
+    <div class="col-sm-5 text-center">
+      <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row ">
+          <div class="col-sm-12"><span style="font-size: 100px;" class="border-bottom fuenteGeneral">GES</span></div>
+          <div class="col-sm-12"><span class=" fuenteGeneral">Gestión de servicios</span></div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-sm-7  text-center" style="background-color:#0911CE">
+      <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col col-sm-8 p-5">
+          <div class="shadow rounded bg-white p-5">
+            <h1 class="mb-5">Iniciar sesión</h1>
+
+            <form [formGroup]="formulario"
+                  (ngSubmit)="iniciarSesion()">
+              <div class="col col-sm-6 offset-sm-3">
+                <div class="mb-3">
+                  <label for="usuario" class="form-label">N° de documento</label>
+                  <input formControlName="usuario" type="text" class="form-control text-center" id="usuario">
+                </div>
+              </div>
+
+              <div class="col col-sm-6 offset-sm-3 mb-4">
+                <div class="mb-3">
+                  <label for="clave" class="form-label">Contraseña</label>
+                  <input formControlName="clave" type="password" class="form-control text-center" id="clave">
+                </div>
+              </div>
+
+              <div *ngIf="verError" class="alert alert-danger" role="alert">
+                {{mensajeError}}
+              </div>
+
+              <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
