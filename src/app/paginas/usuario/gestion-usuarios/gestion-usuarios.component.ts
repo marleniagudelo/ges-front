@@ -26,8 +26,7 @@ export class GestionUsuariosComponent {
 
   editarUsuario(datos:any){
     console.log(datos);
-    
-
+    this.servicioUsuario.datosEditarUsuario(datos)
   }
 
 }
