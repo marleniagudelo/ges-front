@@ -23,18 +23,18 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   crearCliente(datos: any) {
-    return this.http.post<any>(`${this.apiUrl}/ges/controladores/crear_cliente_controlador.php`, datos)
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/crear_cliente_controlador.php`, datos)
   }
 
   editarCliente(datos: any) {
-    return this.http.post<any>(`${this.apiUrl}/ges/controladores/editar_cliente_controlador.php`, datos)
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/editar_cliente_controlador.php`, datos)
   }
 
   listarCliente() {
-    return this.http.get<any>(`${this.apiUrl}/ges/controladores/listar_cliente_controlador.php`)
+    return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_cliente_controlador.php`)
   }
 
   eliminarCliente(datos:any){
-    return this.http.post<any>(`${this.apiUrl}/ges/controladores/eliminar_cliente_controlador.php`, datos)
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/eliminar_cliente_controlador.php`, datos)
   }
 }

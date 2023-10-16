@@ -12,8 +12,11 @@ export class EncabezadoComponent {
   public nombrePagina:string = ""
 
   constructor(private router: Router) {
-    if(router.url === '/principal'){
-      this.nombrePagina = "Menú principal"
+    if(router.url === '/principal-admin'){
+      this.nombrePagina = "Administrador"
+    }
+    if(router.url === '/principal-tecnico'){
+      this.nombrePagina = "Tecnico"
     }
     if(router.url === '/crear-usuario'){
       this.nombrePagina = "Crear usuario"

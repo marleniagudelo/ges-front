@@ -14,7 +14,7 @@ export class IniciarSesionService {
 
 
   iniciarSesion(datos: any) {
-    return this.http.post<any>(`${this.apiUrl}/ges/controladores/iniciar_sesion_controlador.php`, datos)
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/iniciar_sesion_controlador.php`, datos)
   }
 
 

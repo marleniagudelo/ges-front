@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {OrdenServicioService} from "../../servicios/orden-servicio.service";
+import {Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-inicio-admin',
@@ -10,7 +12,7 @@ export class InicioAdminComponent {
 
   public listadoOrdenesPendientes: any[] = [];
 
-  constructor(private ordenServicio: OrdenServicioService) {
+  constructor(private ordenServicio: OrdenServicioService, private router: Router) {
     this.listarOrdenesPendientes()
   }
 
@@ -22,4 +24,46 @@ export class InicioAdminComponent {
     })
   }
 
+
+  editarOrden(datosOrden: any) {
+    this.ordenServicio.datosOrdenActualizar = datosOrden;
+    this.router.navigate(['/editar-orden'])
+  }
+
+  cancelarOrden(idOrden: string) {
+    Swal.fire({
+      title: "Atencion",
+      text: 'Cancelar orden?',
+      icon: 'warning',
+      showConfirmButton: true,
+      showDenyButton: true,
+      confirmButtonText: 'Eliminar',
+      confirmButtonColor: '#da2528',
+      denyButtonText: 'Cancelar',
+      denyButtonColor: '#000'
+    }).then(res => {
+      if (res.isConfirmed) {
+        const datos = {
+          "id_orden": idOrden
+        }
+        this.ordenServicio.cancelarOrden(datos).subscribe(respuesta => {
+          console.log(respuesta)
+          if (respuesta.estado === 200) {
+            Swal.fire({
+              title: 'Bien!',
+              text: respuesta.mensaje,
+              icon: 'success'
+            })
+          } else {
+            Swal.fire({
+              title: 'Atencion!',
+              text: respuesta.mensaje,
+              icon: 'error'
+            })
+          }
+        })
+        this.router.navigate(['/principal-admi'])
+      }
+    })
+  }
 }

@@ -21,7 +21,7 @@ export class CrearOrdenComponent {
               private fb: FormBuilder,
               private router:Router) {
     this.listarCliente();
-    this.listarTecnico()
+    this.listarTecnico();
   }
 
   public formulario: FormGroup = this.fb.group({

@@ -19,7 +19,8 @@ import { CrearClienteComponent } from './paginas/cliente/crear-cliente/crear-cli
 import { GestionarClientesComponent } from './paginas/cliente/gestionar-clientes/gestionar-clientes.component';
 import { EditarClienteComponent } from './paginas/cliente/editar-cliente/editar-cliente.component';
 import { InicioAdminComponent } from './componentes/inicio-admin/inicio-admin.component';
-import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecnico.component'
+import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecnico.component';
+import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orden.component'
 
 
 
@@ -37,7 +38,8 @@ import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecn
     GestionarClientesComponent,
     EditarClienteComponent,
     InicioAdminComponent,
-    InicioTecnicoComponent
+    InicioTecnicoComponent,
+    EditarOrdenComponent
   ],
   imports: [
     BrowserModule,

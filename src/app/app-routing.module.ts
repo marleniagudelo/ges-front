@@ -11,6 +11,7 @@ import { CrearOrdenComponent } from './paginas/ordenes/crear-orden/crear-orden.c
 import {EditarClienteComponent} from "./paginas/cliente/editar-cliente/editar-cliente.component";
 import {InicioAdminComponent} from "./componentes/inicio-admin/inicio-admin.component";
 import {InicioTecnicoComponent} from "./componentes/inicio-tecnico/inicio-tecnico.component";
+import {EditarOrdenComponent} from "./paginas/ordenes/editar-orden/editar-orden.component";
 
 const routes: Routes = [
   {path: 'iniciar-sesion', component: IniciarSesionComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'crear-cliente',component: CrearClienteComponent},
   {path: 'editar-cliente',component: EditarClienteComponent},
   {path: 'crear-orden',component: CrearOrdenComponent},
+  {path: 'editar-orden',component: EditarOrdenComponent},
   {path: 'principal',component: PrincipalComponent},
   {path: 'principal-admin',component: InicioAdminComponent},
   {path: 'principal-tecnico',component: InicioTecnicoComponent},

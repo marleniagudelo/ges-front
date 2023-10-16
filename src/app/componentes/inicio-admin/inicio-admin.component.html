@@ -42,8 +42,8 @@
           <td>{{ordenPendiente.descripcion_novedad}}</td>
           <td>{{ordenPendiente.fecha_creacion}}</td>
           <td>{{ordenPendiente.nombre_estado}}</td>
-          <td class="text-center"><a class="btn btn-outline-success">Editar</a></td>
-          <td class="text-center"><a class="btn btn-outline-danger">Cancelar</a></td>
+          <td class="text-center"><a (click)="editarOrden(ordenPendiente)" class="btn btn-outline-success">Editar</a></td>
+          <td class="text-center"><a (click)="cancelarOrden(ordenPendiente.id_orden)" class="btn btn-outline-danger">Cancelar</a></td>
         </tr>
 
         </tbody>

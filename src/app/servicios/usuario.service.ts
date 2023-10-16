@@ -12,19 +12,19 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   crearUsuario(datos: any) {
-    return this.http.post<any>(`${this.apiUrl}/ges/controladores/crear_usuario_controlador.php`, datos)
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/crear_usuario_controlador.php`, datos)
   }
 
   listarRol() {
-    return this.http.get<any>(`${this.apiUrl}/ges/controladores/listar_rol_controlador.php`)
+    return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_rol_controlador.php`)
   }
 
   listarTecnico() {
-    return this.http.get<any>(`${this.apiUrl}/ges/controladores/listar_tecnico_controlador.php`)
+    return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_tecnico_controlador.php`)
   }
 
   listarUsuario() {
-    return this.http.get<any>(`${this.apiUrl}/ges/controladores/listar_usuario_controlador.php`)
+    return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_usuario_controlador.php`)
   }
 
   datosEditarUsuario(datos: any) {
