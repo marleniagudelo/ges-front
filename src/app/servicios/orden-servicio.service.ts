@@ -38,11 +38,20 @@ export class OrdenServicioService {
     return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_ordenes_pendientes_controlador.php`)
   }
 
-  listarOrdenesTecnico(documento: any) {
+  listarOrdenesTecnico(documento: any, estadoOrden: string) {
 
     const datos = {
-      "num_documento": documento
+      "num_documento": documento,
+      "estado_orden":estadoOrden
     }
     return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/listar_ordenes_tecnico_controlador.php`, datos)
+  }
+
+  tomarOrden(idOrden: any) {
+
+    const datos = {
+      "id_orden": idOrden
+    }
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/tomar_orden_controlador.php`, datos)
   }
 }

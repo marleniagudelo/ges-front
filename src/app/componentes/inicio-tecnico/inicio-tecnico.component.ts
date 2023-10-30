@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {OrdenServicioService} from "../../servicios/orden-servicio.service";
 
 @Component({
   selector: 'app-inicio-tecnico',
@@ -7,21 +6,20 @@ import {OrdenServicioService} from "../../servicios/orden-servicio.service";
   styleUrls: ['./inicio-tecnico.component.css']
 })
 export class InicioTecnicoComponent {
-  public numDocumento: string | null = "";
-  public listadoSercicios: any[] = [];
+  public tipoTablaMostrar: string = '1'
 
-  constructor(private servicioOrden: OrdenServicioService) {
-    this.numDocumento = sessionStorage.getItem('numero_documento');
 
-    this.listadoServicios();
+  mostrarPendientes(): void {
+    this.tipoTablaMostrar = "1"
   }
 
-  listadoServicios() {
-
-    this.servicioOrden.listarOrdenesTecnico(this.numDocumento).subscribe(respuesta => {
-      console.log(respuesta)
-      this.listadoSercicios = respuesta.datos
-    })
+  mostrarEnProceso(): void {
+    this.tipoTablaMostrar = "2"
   }
 
+  mostrarFinalizadas(): void {
+    this.tipoTablaMostrar = "3"
+  }
 }
+
+

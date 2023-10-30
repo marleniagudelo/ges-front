@@ -37,9 +37,9 @@ export class InicioAdminComponent {
       icon: 'warning',
       showConfirmButton: true,
       showDenyButton: true,
-      confirmButtonText: 'Eliminar',
+      confirmButtonText: 'Cancelar orden',
       confirmButtonColor: '#da2528',
-      denyButtonText: 'Cancelar',
+      denyButtonText: 'Volver',
       denyButtonColor: '#000'
     }).then(res => {
       if (res.isConfirmed) {
@@ -62,7 +62,7 @@ export class InicioAdminComponent {
             })
           }
         })
-        this.router.navigate(['/principal-admi'])
+        this.router.navigate(['/principal-admin'])
       }
     })
   }

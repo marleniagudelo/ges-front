@@ -20,7 +20,8 @@ import { GestionarClientesComponent } from './paginas/cliente/gestionar-clientes
 import { EditarClienteComponent } from './paginas/cliente/editar-cliente/editar-cliente.component';
 import { InicioAdminComponent } from './componentes/inicio-admin/inicio-admin.component';
 import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecnico.component';
-import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orden.component'
+import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orden.component';
+import { TablaOrdenServicioComponent } from './componentes/tabla-orden-servicio/tabla-orden-servicio.component'
 
 
 
@@ -39,7 +40,8 @@ import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orde
     EditarClienteComponent,
     InicioAdminComponent,
     InicioTecnicoComponent,
-    EditarOrdenComponent
+    EditarOrdenComponent,
+    TablaOrdenServicioComponent
   ],
   imports: [
     BrowserModule,

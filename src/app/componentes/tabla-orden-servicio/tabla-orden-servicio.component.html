@@ -1,0 +1,30 @@
+<table class="table table-hover table-bordered">
+  <caption>Ordenes de servicios pendientes</caption>
+  <thead class="table-dark">
+  <tr>
+    <th scope="col">Documento/NIT</th>
+    <th scope="col">Cliente</th>
+    <th scope="col">Técnico</th>
+    <th scope="col">Descripción de la novedad</th>
+    <th scope="col">Fecha de orden</th>
+    <th scope="col">Estado</th>
+    <th *ngIf="mostrarTomar" scope="col" class="text-center"></th>
+    <th scope="col" class="text-center"></th>
+    <th scope="col" class="text-center"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let servicios of listadoSercicios">
+    <td>{{servicios.nit}}</td>
+    <td>{{servicios.razon_social}}</td>
+    <td>{{servicios.nombre_usuario}}</td>
+    <td>{{servicios.descripcion_novedad}}</td>
+    <td>{{servicios.fecha_creacion}}</td>
+    <td>{{servicios.nombre_estado}}</td>
+    <td *ngIf="mostrarTomar"  class="text-center"><a  class="btn btn-outline-success" (click)="tomarOrden(servicios.id_orden)">Tomar orden</a></td>
+    <td class="text-center"><a class="btn btn-outline-primary">Detalle</a></td>
+    <td class="text-center"><a class="btn btn-outline-danger">Cancelar orden</a></td>
+  </tr>
+
+  </tbody>
+</table>
