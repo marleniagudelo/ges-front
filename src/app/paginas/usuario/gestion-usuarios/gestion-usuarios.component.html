@@ -26,11 +26,12 @@
             <td class="text-center">{{usuario.nombre_usuario}}</td>
             <td class="text-center">{{usuario.nombre_rol}}</td>
             <td class="text-center"><a (click)="editarUsuario(usuario)" class="btn btn-outline-success">Editar</a></td>
-            <td *ngIf="usuario.estado === '1'" class="text-center">
-              <a class="btn btn-outline-danger" >Desactivar</a>
-            </td>
+
             <td *ngIf="usuario.estado === '0'" class="text-center">
-              <a class="btn btn-outline-success">Activar</a>
+              <a class="btn btn-outline-danger" (click)="editarEstadoUsuario(usuario.num_documento,'1')">Inactivo</a>
+            </td>
+            <td *ngIf="usuario.estado === '1'" class="text-center">
+              <a class="btn btn-outline-success" (click)="editarEstadoUsuario(usuario.num_documento,'0')">Activo</a>
             </td>
           </tr>
         </tbody>

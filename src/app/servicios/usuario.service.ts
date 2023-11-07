@@ -7,6 +7,15 @@ import { environment } from "../../environments/environment";
   providedIn: 'root'
 })
 export class UsuarioService {
+  get datosUsuario(): any {
+    return this._datosUsuario;
+  }
+
+  set datosUsuario(value: any) {
+    this._datosUsuario = value;
+  }
+
+  private _datosUsuario:any;
 
   private apiUrl: string = environment.apiUrl;
   constructor(private http: HttpClient) { }
@@ -27,8 +36,11 @@ export class UsuarioService {
     return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_usuario_controlador.php`)
   }
 
-  datosEditarUsuario(datos: any) {
-    console.log(datos);
+  editarUsuario(datos: any) {
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/editar_usuario_controlador.php`, datos)
+  }
 
+  estadoUsuario(datos: any) {
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/estado_usuario_controlador.php`, datos)
   }
 }

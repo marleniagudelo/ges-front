@@ -62,6 +62,7 @@ export class EditarOrdenComponent implements OnInit {
             text: respuesta.mensaje,
             icon: 'success'
           })
+          this.router.navigate(['/principal-admin'])
         }else{
           Swal.fire({
             title: 'Atencion!',
@@ -70,7 +71,6 @@ export class EditarOrdenComponent implements OnInit {
           })
         }
       })
-      this.router.navigate(['/principal-admin'])
     }
 
   }

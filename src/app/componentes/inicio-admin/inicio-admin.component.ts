@@ -54,6 +54,7 @@ export class InicioAdminComponent {
               text: respuesta.mensaje,
               icon: 'success'
             })
+            this.listarOrdenesPendientes()
           } else {
             Swal.fire({
               title: 'Atencion!',
