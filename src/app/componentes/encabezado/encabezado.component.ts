@@ -16,13 +16,13 @@ export class EncabezadoComponent {
       this.nombrePagina = "Administrador"
     }
     if(router.url === '/principal-tecnico'){
-      this.nombrePagina = "Tecnico"
+      this.nombrePagina = "Técnico"
     }
     if(router.url === '/crear-usuario'){
       this.nombrePagina = "Crear usuario"
     }
     if(router.url === '/gestion-usuarios'){
-      this.nombrePagina = "Gestion usuarios"
+      this.nombrePagina = "Gestión usuarios"
     }
     if(router.url === '/editar-usuario'){
       this.nombrePagina = "Editar usuario"
@@ -53,7 +53,7 @@ export class EncabezadoComponent {
 
 
   cerrarCesion() {
-    console.log("cerrar sesion");
+    console.log("cerrar sesión");
     sessionStorage.clear()
     this.router.navigate(['/iniciar-sesion'])
   }
