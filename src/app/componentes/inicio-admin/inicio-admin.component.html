@@ -13,17 +13,9 @@
   </div>
 
 
-  <div class="row mt-3">
-    <div class="btn-group">
-      <a  class="btn btn-outline-primary" (click)="mostrarPendientes()">Ordenes pendientes</a>
-      <a  class="btn btn-outline-success" (click)="mostrarEnProceso()">Ordenes en proceso</a>
-      <a  class="btn btn-outline-secondary" (click)="mostrarFinalizadas()">Ordenes finalizadas</a>
-    </div>
-  </div>
-
   <div class="row">
     <div class="col col-sm-12 mt-5">
-      <span class="fs-3">{{estadoOrden}}</span>
+      <span class="fs-3">Ordenes pendientes</span>
     </div>
   </div>
   <div class="row">
@@ -43,15 +35,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let orden of listadoOrdenes">
-          <td>{{orden.nit}}</td>
-          <td>{{orden.razon_social}}</td>
-          <td>{{orden.nombre_usuario}}</td>
-          <td>{{orden.descripcion_novedad}}</td>
-          <td>{{orden.fecha_creacion}}</td>
-          <td>{{orden.nombre_estado}}</td>
-          <td class="text-center"><a *ngIf="orden.id_estado !== '3'" (click)="editarOrden(orden)" class="btn btn-outline-success">Editar</a></td>
-          <td  class="text-center"><a *ngIf="orden.id_estado !== '3'" (click)="cancelarOrden(orden.id_orden)" class="btn btn-outline-danger">Cancelar</a></td>
+        <tr *ngFor="let ordenPendiente of listadoOrdenesPendientes">
+          <td>{{ordenPendiente.nit}}</td>
+          <td>{{ordenPendiente.razon_social}}</td>
+          <td>{{ordenPendiente.nombre_usuario}}</td>
+          <td>{{ordenPendiente.descripcion_novedad}}</td>
+          <td>{{ordenPendiente.fecha_creacion}}</td>
+          <td>{{ordenPendiente.nombre_estado}}</td>
+          <td class="text-center"><a (click)="editarOrden(ordenPendiente)" class="btn btn-outline-success">Editar</a></td>
+          <td class="text-center"><a (click)="cancelarOrden(ordenPendiente.id_orden)" class="btn btn-outline-danger">Cancelar</a></td>
         </tr>
 
         </tbody>
