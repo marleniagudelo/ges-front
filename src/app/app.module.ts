@@ -21,7 +21,8 @@ import { EditarClienteComponent } from './paginas/cliente/editar-cliente/editar-
 import { InicioAdminComponent } from './componentes/inicio-admin/inicio-admin.component';
 import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecnico.component';
 import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orden.component';
-import { TablaOrdenServicioComponent } from './componentes/tabla-orden-servicio/tabla-orden-servicio.component'
+import { TablaOrdenServicioComponent } from './componentes/tabla-orden-servicio/tabla-orden-servicio.component';
+import { DetalleOrdenComponent } from './paginas/ordenes/detalle-orden/detalle-orden.component'
 
 
 
@@ -41,7 +42,8 @@ import { TablaOrdenServicioComponent } from './componentes/tabla-orden-servicio/
     InicioAdminComponent,
     InicioTecnicoComponent,
     EditarOrdenComponent,
-    TablaOrdenServicioComponent
+    TablaOrdenServicioComponent,
+    DetalleOrdenComponent
   ],
   imports: [
     BrowserModule,

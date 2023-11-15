@@ -1,3 +1,11 @@
+
+<div class="row mb-2">
+  <div class="col col-sm-12 mt-5">
+    <span class="fs-3 ">{{tituloTabla}}</span>
+  </div>
+</div>
+
+
 <table class="table table-hover table-bordered">
   <caption>Ordenes de servicios pendientes</caption>
   <thead class="table-dark">
@@ -22,8 +30,11 @@
     <td>{{servicios.fecha_creacion}}</td>
     <td>{{servicios.nombre_estado}}</td>
     <td *ngIf="mostrarTomar"  class="text-center"><a  class="btn btn-outline-success" (click)="tomarOrden(servicios.id_orden)">Tomar orden</a></td>
-    <td class="text-center"><a class="btn btn-outline-primary">Detalle</a></td>
-    <td class="text-center"><a class="btn btn-outline-danger">Cancelar orden</a></td>
+    <td class="text-center"><a class="btn btn-outline-primary" (click)="verDetalle(servicios)">Detalle</a></td>
+    <td class="text-center">
+      <a *ngIf="servicios.id_estado !== '3' && servicios.id_estado !== '2'" class="btn btn-outline-danger">Cancelar orden</a>
+      <a *ngIf="servicios.id_estado !== '3' && servicios.id_estado !== '1'" class="btn btn-outline-danger">Finalizar orden</a>
+    </td>
   </tr>
 
   </tbody>

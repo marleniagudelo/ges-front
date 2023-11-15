@@ -9,6 +9,7 @@ export class InicioTecnicoComponent {
   public tipoTablaMostrar: string = '1'
 
 
+
   mostrarPendientes(): void {
     this.tipoTablaMostrar = "1"
   }

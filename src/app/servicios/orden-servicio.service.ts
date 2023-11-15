@@ -34,8 +34,11 @@ export class OrdenServicioService {
     return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/eliminar_orden_controlador.php`, datos)
   }
 
-  listarOrdenesPendientes() {
-    return this.http.get<any>(`${this.apiUrl}/ges-back/controladores/listar_ordenes_pendientes_controlador.php`)
+  listarOrdenes(estado:string) {
+    const datos = {
+      "estado": estado
+    }
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/listar_ordenes_estado_controlador.php`,datos)
   }
 
   listarOrdenesTecnico(documento: any, estadoOrden: string) {

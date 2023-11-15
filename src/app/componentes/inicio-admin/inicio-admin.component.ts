@@ -10,17 +10,18 @@ import Swal from "sweetalert2";
 })
 export class InicioAdminComponent {
 
-  public listadoOrdenesPendientes: any[] = [];
+  public listadoOrdenes: any[] = [];
+  public estadoOrden: string = "Ordenes pendientes";
 
   constructor(private ordenServicio: OrdenServicioService, private router: Router) {
-    this.listarOrdenesPendientes()
+    this.listarOrdenesPendientes("1")
   }
 
 
-  listarOrdenesPendientes() {
-    this.ordenServicio.listarOrdenesPendientes().subscribe(respuesta => {
+  listarOrdenesPendientes(estado: string) {
+    this.ordenServicio.listarOrdenes(estado).subscribe(respuesta => {
       console.log(respuesta)
-      this.listadoOrdenesPendientes = respuesta.datos
+      this.listadoOrdenes = respuesta.datos
     })
   }
 
@@ -54,7 +55,7 @@ export class InicioAdminComponent {
               text: respuesta.mensaje,
               icon: 'success'
             })
-            this.listarOrdenesPendientes()
+            this.listarOrdenesPendientes("1")
           } else {
             Swal.fire({
               title: 'Atencion!',
@@ -66,5 +67,21 @@ export class InicioAdminComponent {
         this.router.navigate(['/principal-admin'])
       }
     })
+  }
+
+  mostrarPendientes() {
+    this.listarOrdenesPendientes("1")
+    this.estadoOrden = "Ordenes pendientes";
+  }
+
+  mostrarEnProceso() {
+    this.listarOrdenesPendientes("2")
+    this.estadoOrden = "Ordenes en proceso";
+
+  }
+
+  mostrarFinalizadas() {
+    this.listarOrdenesPendientes("3")
+    this.estadoOrden = "Ordenes finalizadas";
   }
 }
