@@ -33,6 +33,7 @@
         <caption>Ordenes de servicios</caption>
         <thead class="table-dark">
         <tr>
+          <th scope="col"># Orden</th>
           <th scope="col">Documento/NIT</th>
           <th scope="col">Cliente</th>
           <th scope="col">Técnico</th>
@@ -45,6 +46,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let orden of listadoOrdenes">
+          <td>{{orden.id_orden}}</td>
           <td>{{orden.nit}}</td>
           <td>{{orden.razon_social}}</td>
           <td>{{orden.nombre_usuario}}</td>

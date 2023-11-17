@@ -10,6 +10,7 @@
   <caption>Órdenes de servicios pendientes</caption>
   <thead class="table-dark">
   <tr>
+    <th scope="col"># Orden</th>
     <th scope="col">Documento/NIT</th>
     <th scope="col">Cliente</th>
     <th scope="col">Técnico</th>
@@ -23,6 +24,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let servicios of listadoSercicios">
+    <td>{{servicios.id_orden}}</td>
     <td>{{servicios.nit}}</td>
     <td>{{servicios.razon_social}}</td>
     <td>{{servicios.nombre_usuario}}</td>
