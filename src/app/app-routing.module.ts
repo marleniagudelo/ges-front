@@ -13,6 +13,7 @@ import {InicioAdminComponent} from "./componentes/inicio-admin/inicio-admin.comp
 import {InicioTecnicoComponent} from "./componentes/inicio-tecnico/inicio-tecnico.component";
 import {EditarOrdenComponent} from "./paginas/ordenes/editar-orden/editar-orden.component";
 import {DetalleOrdenComponent} from "./paginas/ordenes/detalle-orden/detalle-orden.component";
+import {FinalizarOrdenComponent} from "./paginas/ordenes/finalizar-orden/finalizar-orden.component";
 
 const routes: Routes = [
   {path: 'iniciar-sesion', component: IniciarSesionComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'crear-orden', component: CrearOrdenComponent},
   {path: 'editar-orden', component: EditarOrdenComponent},
   {path: 'detalle-orden', component: DetalleOrdenComponent},
+  {path: 'finalizar-orden', component: FinalizarOrdenComponent},
 
   {path: 'principal', component: PrincipalComponent},
   {path: 'principal-admin', component: InicioAdminComponent},

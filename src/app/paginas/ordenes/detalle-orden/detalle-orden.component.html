@@ -1,4 +1,46 @@
 <app-encabezado></app-encabezado>
 <div class="container">
-  a
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 shadow mt-5 p-3">
+
+     <div class="text-center">
+       <span class="fs-4 fw-light">Detalle de la orden N° <span class="fw-bold">{{detalleOrden.id_orden}}</span></span>
+     </div>
+
+
+      <div class=" mt-3 border">
+        <span class="fs-6 fw-light ">Cliente: <span class="fw-bold">{{detalleOrden.razon_social}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Nit: <span class="fw-bold">{{detalleOrden.nit}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Descripcion novedad: <span class="fw-bold">{{detalleOrden.descripcion_novedad}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Fecha creacion: <span class="fw-bold">{{detalleOrden.fecha_creacion}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Nombre del tecnico: <span class="fw-bold">{{detalleOrden.nombre_usuario}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Fecha inicio: <span class="fw-bold">{{detalleOrden.fecha_Inicio}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Fecha final: <span class="fw-bold">{{detalleOrden.fecha_final}}</span></span>
+      </div>
+      <div class="  border">
+        <span class="fs-6 fw-light">Observacion final: <span class="fw-bold">{{detalleOrden.observaciones_finales}}</span></span>
+      </div>
+
+      <div class=" border">
+        <span class="fs-6 fw-light">Estado del servicio: <span class="fw-bold">{{detalleOrden.nombre_estado}}</span></span>
+      </div>
+
+      <div class="text-center mt-4">
+        <a routerLink="/" class="btn btn-outline-primary">Volver</a>
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -84,4 +84,10 @@ export class InicioAdminComponent {
     this.listarOrdenesPendientes("3")
     this.estadoOrden = "Ordenes finalizadas";
   }
+
+
+  verDetalle(orden:any){
+    this.ordenServicio.datosOrdenActualizar = orden;
+    this.router.navigate(['/detalle-orden'])
+  }
 }

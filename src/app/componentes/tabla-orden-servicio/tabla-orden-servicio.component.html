@@ -28,14 +28,12 @@
     <td>{{servicios.nombre_usuario}}</td>
     <td>{{servicios.descripcion_novedad}}</td>
     <td>{{servicios.fecha_creacion}}</td>
-    <td>{{servicios.nombre_estado}}</td>
+    <td><span>{{servicios.nombre_estado}}</span></td>
     <td *ngIf="mostrarTomar"  class="text-center"><a  class="btn btn-outline-success" (click)="tomarOrden(servicios.id_orden)">Tomar orden</a></td>
     <td class="text-center"><a class="btn btn-outline-primary" (click)="verDetalle(servicios)">Detalle</a></td>
     <td class="text-center">
-      <a *ngIf="servicios.id_estado !== '3' && servicios.id_estado !== '2'" class="btn btn-outline-danger">Cancelar orden</a>
-      <a *ngIf="servicios.id_estado !== '3' && servicios.id_estado !== '1'" class="btn btn-outline-danger">Finalizar orden</a>
+      <a *ngIf="servicios.id_estado !== '3' && servicios.id_estado !== '1'" (click)="finalizarSevicio(servicios)" class="btn btn-outline-danger">Finalizar orden</a>
     </td>
   </tr>
-
   </tbody>
 </table>

@@ -69,5 +69,10 @@ export class TablaOrdenServicioComponent implements OnChanges {
     this.router.navigate(['/detalle-orden'])
   }
 
+  finalizarSevicio(orden:any){
+    this.servicioOrden.datosOrdenActualizar = orden;
+    this.router.navigate(['/finalizar-orden'])
+  }
+
 
 }

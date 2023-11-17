@@ -22,7 +22,8 @@ import { InicioAdminComponent } from './componentes/inicio-admin/inicio-admin.co
 import { InicioTecnicoComponent } from './componentes/inicio-tecnico/inicio-tecnico.component';
 import { EditarOrdenComponent } from './paginas/ordenes/editar-orden/editar-orden.component';
 import { TablaOrdenServicioComponent } from './componentes/tabla-orden-servicio/tabla-orden-servicio.component';
-import { DetalleOrdenComponent } from './paginas/ordenes/detalle-orden/detalle-orden.component'
+import { DetalleOrdenComponent } from './paginas/ordenes/detalle-orden/detalle-orden.component';
+import { FinalizarOrdenComponent } from './paginas/ordenes/finalizar-orden/finalizar-orden.component'
 
 
 
@@ -43,7 +44,8 @@ import { DetalleOrdenComponent } from './paginas/ordenes/detalle-orden/detalle-o
     InicioTecnicoComponent,
     EditarOrdenComponent,
     TablaOrdenServicioComponent,
-    DetalleOrdenComponent
+    DetalleOrdenComponent,
+    FinalizarOrdenComponent
   ],
   imports: [
     BrowserModule,

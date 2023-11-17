@@ -57,4 +57,13 @@ export class OrdenServicioService {
     }
     return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/tomar_orden_controlador.php`, datos)
   }
+
+  finalizarOrden(idOrden: any, observacion_final: any) {
+
+    const datos = {
+      "id_orden": idOrden,
+      "observacion_final": observacion_final
+    }
+    return this.http.post<any>(`${this.apiUrl}/ges-back/controladores/finalizar_orden_controlador.php`, datos)
+  }
 }
